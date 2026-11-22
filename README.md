@@ -4,6 +4,8 @@ Ferramenta desenvolvida em **Batch Script (`.bat`)** para automatizar o bloqueio
 
 O projeto utiliza o **Firewall do Windows** para gerenciar regras de tráfego de saída, sem modificar arquivos dos jogos ou do Riot Client.
 
+[**Baixar Riot Offline Toggle**](https://github.com/LuiLF/riot-offline-toggle/releases/latest)
+
 ## Funcionalidades
 
 - Ativação e desativação do bloqueio por meio de scripts `.bat`.
