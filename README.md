@@ -4,8 +4,6 @@ Ferramenta desenvolvida em **Batch Script (`.bat`)** para automatizar o bloqueio
 
 O projeto utiliza o **Firewall do Windows** para gerenciar regras de tráfego de saída, sem modificar arquivos dos jogos ou do Riot Client.
 
-> **Aviso:** Este é um projeto independente, sem vínculo com a Riot Games. Seu funcionamento pode ser afetado por atualizações dos clientes, alterações na infraestrutura de rede ou diferenças entre ambientes.
-
 ## Funcionalidades
 
 - Ativação e desativação do bloqueio por meio de scripts `.bat`.
@@ -78,8 +76,6 @@ A captura abaixo apresenta as configurações observadas durante o teste, inclui
 
 No ambiente testado, foram identificadas duas regras de saída com ação `Block`: uma para as portas TCP `5222` e `5223` e outra para o IPv4 `172.65.212.1`, resolvido durante a execução.
 
-O endereço IP apresentado corresponde à resolução observada naquele momento e pode mudar em execuções futuras.
-
 ## Testes e validação
 
 O funcionamento foi avaliado manualmente em ambiente Windows, comparando o comportamento dos serviços sociais da Riot com as regras de firewall ativadas e desativadas.
@@ -127,8 +123,6 @@ Após executar `desativar-offline.bat` e reiniciar os clientes, foram observados
 | Chat do League of Legends | Desconectado | Conectado |
 | Visibilidade no Riot Mobile | Offline | Online — League of Legends |
 
-Os resultados demonstram o comportamento observado durante os testes realizados, sem garantir o mesmo funcionamento em todos os ambientes.
-
 ### Outros jogos testados
 
 Além do League of Legends, o projeto também foi testado manualmente com:
@@ -136,17 +130,12 @@ Além do League of Legends, o projeto também foi testado manualmente com:
 - Valorant
 - Teamfight Tactics (TFT)
 
-Nos testes anteriores, foi possível utilizar esses jogos sem aparecer online na lista de amigos. As evidências visuais apresentadas nesta documentação, entretanto, correspondem especificamente à validação realizada com o **League of Legends e o Riot Mobile**.
-
 ## Limitações e cuidados
 
 - **Escopo das regras:** o bloqueio é aplicado ao sistema operacional, não exclusivamente aos processos da Riot. Outros aplicativos que utilizem as mesmas portas ou endereços podem ser afetados.
 - **Alterações de endereço IP:** o IPv4 do servidor é consultado durante a ativação. Caso o endereço mude posteriormente, pode ser necessário executar o script novamente.
 - **Dependência da resolução DNS:** se o endereço IPv4 não puder ser identificado, somente o bloqueio por portas será aplicado.
-- **IPv6:** a versão atual não cria uma regra específica de bloqueio IPv6, o que pode limitar sua eficácia em determinados ambientes.
 - **Atualizações dos serviços:** mudanças no Riot Client ou na infraestrutura da Riot podem alterar as conexões utilizadas e afetar o funcionamento.
-- **Visibilidade:** o projeto não garante invisibilidade em todos os serviços, jogos ou situações.
-- **Políticas de uso:** a compatibilidade da ferramenta com as políticas da Riot Games não foi verificada.
 
 ## Tecnologias utilizadas
 
@@ -161,8 +150,8 @@ Nos testes anteriores, foi possível utilizar esses jogos sem aparecer online na
 
 ## Desenvolvimento
 
-A implementação inicial foi gerada com auxílio de inteligência artificial. Posteriormente, os scripts foram analisados, testados e revisados para melhorar o gerenciamento das regras de firewall, a verificação de privilégios administrativos e o tratamento de erros.
+O projeto surgiu da necessidade pessoal de controlar a visibilidade online nos serviços da Riot Games, utilizando o Firewall do Windows como alternativa à modificação dos arquivos dos jogos.
 
-O projeto foi utilizado como exercício prático de **redes de computadores, administração do Windows, automação e validação de configurações de firewall**.
+A implementação inicial contou com auxílio de inteligência artificial. Posteriormente, participei ativamente da análise, dos testes e do aprimoramento dos scripts, com foco no gerenciamento das regras de firewall, na verificação de privilégios administrativos e no tratamento de erros.
 
-A documentação inclui evidências da execução dos scripts, inspeção das regras criadas e testes comparativos de conectividade realizados com duas contas Riot.
+A ferramenta foi utilizada na prática e, posteriormente, documentada com evidências de funcionamento e testes de conectividade.
